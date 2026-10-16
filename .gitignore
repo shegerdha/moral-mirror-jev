@@ -1,0 +1,7 @@
+# Ignore local build output, editor state, and Corvexa runtime records.
+node_modules/
+dist/
+.DS_Store
+Thumbs.db
+.corvexa/**
+!.corvexa/project.yaml
