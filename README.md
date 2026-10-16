@@ -2,6 +2,8 @@
 
 A bilingual trolley-problem experiment. Choose first, rate whether the English and Persian tellings preserve the same meaning, then compare Jev's structured judgment side by side. The result reports the probability, permissibility, and confidence deltas between those two responses. The point is to examine wording; one run is not evidence of a general rule about a model or a language.
 
+Live app: <https://shegerdha.github.io/moral-mirror-jev/>. The fixture demo is available; live Jev sign-in will be enabled after the Pollinations App Key is configured.
+
 ## Try it
 
 Serve this folder as static files, then open `index.html` through the local server. The no-cost demo uses fixed illustrative fixtures and makes no API calls. The live comparison requires a Pollinations App Key and a visitor-authorized BYOP key.
