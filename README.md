@@ -1,5 +1,7 @@
 # Moral Mirror — Jev in Two Tellings
 
+[![Made with pollinations.ai](https://raw.githubusercontent.com/pollinations/pollinations/main/packages/ui/src/brand/badge-made-with.svg)](https://pollinations.ai)
+
 A bilingual trolley-problem experiment. Choose first, rate whether the English and Persian tellings preserve the same meaning, then compare Jev's structured judgment side by side. The result reports the probability, permissibility, and confidence deltas between those two responses. The point is to examine wording; one run is not evidence of a general rule about a model or a language.
 
 Live app: <https://shegerdha.github.io/moral-mirror-jev/>. The fixture demo is available; live Jev sign-in will be enabled after the Pollinations App Key is configured.
