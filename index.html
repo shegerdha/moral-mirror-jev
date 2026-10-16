@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101923">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Compare Jev's structured choices across matched English and Persian trolley-problem prompts.">
+  <title>Moral Mirror — Jev in Two Tellings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Moral Mirror home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
+        <span>MORAL MIRROR</span>
+      </a>
+      <div class="topbar-actions">
+        <span class="live-tag"><i></i><span data-i18n="labTag">JEv FRAMING LAB</span></span>
+        <button class="language-button" id="language-toggle" type="button" aria-label="Switch interface language">فارسی</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">A small experiment in moral framing</p>
+        <h1 data-i18n="headline">Same dilemma.<br><em>Two tellings.</em></h1>
+        <p class="hero-description" data-i18n="intro">Choose what you would do, then compare Jev's structured judgment on closely matched English and Persian versions.</p>
+        <div class="hero-note"><span class="note-icon">↗</span><span data-i18n="note">A wording comparison, not a test of moral correctness.</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-label art-label-top">EN</div>
+        <div class="art-label art-label-bottom">فا</div>
+        <svg viewBox="0 0 460 280" role="presentation">
+          <path class="track" d="M54 228 L250 64 L405 64" />
+          <path class="track track-muted" d="M54 228 L250 228 L405 228" />
+          <path class="track-tie" d="M78 208 l26 25 M101 188 l26 25 M124 169 l26 25 M147 150 l26 25 M170 130 l26 25 M193 111 l26 25 M216 91 l26 25" />
+          <path class="track-tie" d="M264 47 v34 M294 47 v34 M324 47 v34 M354 47 v34 M384 47 v34 M264 211 v34 M294 211 v34 M324 211 v34 M354 211 v34 M384 211 v34" />
+          <circle class="signal" cx="250" cy="64" r="9" />
+          <circle class="person person-warm" cx="347" cy="49" r="8" /><circle class="person person-warm" cx="370" cy="49" r="8" /><circle class="person person-warm" cx="393" cy="49" r="8" />
+          <circle class="person person-cool" cx="289" cy="212" r="8" /><circle class="person person-cool" cx="318" cy="212" r="8" /><circle class="person person-cool" cx="347" cy="212" r="8" /><circle class="person person-cool" cx="376" cy="212" r="8" />
+          <g class="trolley" transform="translate(176 112) rotate(-40)"><rect width="75" height="43" rx="9"/><circle cx="18" cy="48" r="7"/><circle cx="57" cy="48" r="7"/><path d="M14 15h47M18 25h26"/></g>
+          <path class="choice-line" d="M250 64 C283 83 302 98 314 122" />
+          <circle class="choice-dot" cx="314" cy="122" r="5" />
+        </svg>
+        <div class="art-caption"><span data-i18n="artCaption">One track. Two ways to describe it.</span><b>01 / 02</b></div>
+      </div>
+    </section>
+
+    <section class="experiment panel" aria-labelledby="experiment-title">
+      <div class="panel-heading">
+        <div><p class="eyebrow" data-i18n="stepOne">01 — YOUR TURN</p><h2 id="experiment-title" data-i18n="scenarioTitle">Read the dilemma</h2></div>
+        <label class="scenario-picker"><span id="scenario-label" data-i18n="chooseScenario">Scenario</span><select id="scenario-select" aria-labelledby="scenario-label"></select></label>
+      </div>
+
+      <div class="scenario-pair">
+        <article class="story-card story-en" lang="en" dir="ltr">
+          <div class="story-meta"><span class="language-chip">ENGLISH</span><span class="story-index">A / 02</span></div>
+          <h3 id="story-en-title"></h3><p id="story-en-text"></p>
+        </article>
+        <article class="story-card story-fa" lang="fa" dir="rtl">
+          <div class="story-meta"><span class="language-chip">فارسی</span><span class="story-index">B / 02</span></div>
+          <h3 id="story-fa-title"></h3><p id="story-fa-text"></p>
+        </article>
+      </div>
+
+      <div class="translation-check" aria-labelledby="translation-check-title">
+        <div class="translation-check-copy">
+          <span class="translation-kicker" data-i18n="pairKicker">PAIR AUDIT</span>
+          <b id="translation-check-title" data-i18n="pairQuestion">Do these versions carry the same meaning?</b>
+          <small data-i18n="pairPrivacy">Optional. This rating stays on this page and is not sent to Jev.</small>
+        </div>
+        <div class="pair-rating-buttons" role="group" aria-labelledby="translation-check-title">
+          <button class="pair-rating-button" type="button" data-pair-rating="close" aria-pressed="false" data-i18n="pairClose">Close match</button>
+          <button class="pair-rating-button" type="button" data-pair-rating="unsure" aria-pressed="false" data-i18n="pairUnsure">Not sure</button>
+          <button class="pair-rating-button" type="button" data-pair-rating="drift" aria-pressed="false" data-i18n="pairDrift">Meaning shifts</button>
+        </div>
+      </div>
+
+      <div class="vote-row">
+        <div class="vote-prompt"><span class="vote-number">1</span><div><b id="your-choice-title" data-i18n="yourChoice">What would you choose?</b><small data-i18n="chooseFirst">Choose before seeing Jev's answer.</small></div></div>
+        <div class="choice-buttons" role="group" aria-labelledby="your-choice-title">
+          <button class="choice-button" id="choice-intervene" type="button" data-choice="intervene"><span class="choice-symbol">↗</span><span id="intervene-label"></span></button>
+          <button class="choice-button" id="choice-refrain" type="button" data-choice="refrain"><span class="choice-symbol">→</span><span id="refrain-label"></span></button>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <div class="billing-note"><span class="lock-icon">◈</span><span data-i18n="billingNote">Live comparison sends 2 requests to Jev using your own Pollen.</span></div>
+        <div class="action-buttons">
+          <button class="button button-quiet" id="demo-button" type="button"><span>◉</span><span data-i18n="demoButton">Explore a no-cost demo</span></button>
+          <button class="button button-dark" id="connect-button" type="button"><span>↗</span><span data-i18n="connectButton">Connect your Pollen</span></button>
+          <button class="button button-accent" id="run-button" type="button" disabled><span data-i18n="runButton">Compare with Jev · 2 requests</span><span>→</span></button>
+        </div>
+      </div>
+      <p class="consent-note" id="consent-note" hidden><label><input type="checkbox" id="live-consent"><span data-i18n="consentText">I understand this will send two requests and use my authorized Pollen balance.</span></label></p>
+      <div class="status-message" id="status-message" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="results panel" id="results-panel" hidden aria-labelledby="results-title">
+      <div class="panel-heading results-heading"><div><p class="eyebrow" data-i18n="stepTwo">02 — THE COMPARISON</p><h2 id="results-title" data-i18n="resultsTitle">Two tellings, side by side</h2></div><span class="result-badge" id="result-mode"></span></div>
+      <p class="results-intro" data-i18n="resultsIntro">Jev answers structured questions; it does not explain its choice in free text. The probabilities describe this prompt and run.</p>
+      <div class="delta-panel">
+        <div class="delta-panel-heading">
+          <div><span class="translation-kicker" data-i18n="deltaKicker">CROSS-LANGUAGE READOUT</span><b data-i18n="deltaTitle">What changed between the two tellings?</b></div>
+          <div class="pair-rating-readout"><small data-i18n="pairReadoutLabel">Your translation rating</small><strong id="pair-rating-value"></strong></div>
+        </div>
+        <div class="delta-grid">
+          <div class="delta-cell"><small data-i18n="choiceDeltaLabel">Jev's choice</small><strong id="delta-choice">—</strong></div>
+          <div class="delta-cell"><small data-i18n="probabilityDeltaLabel">Intervention probability · FA − EN</small><strong id="delta-probability">—</strong></div>
+          <div class="delta-cell"><small data-i18n="permissionDeltaLabel">Permissibility · FA − EN</small><strong id="delta-permission">—</strong></div>
+          <div class="delta-cell"><small data-i18n="confidenceDeltaLabel">Confidence · FA − EN</small><strong id="delta-confidence">—</strong></div>
+        </div>
+        <p class="delta-caveat" data-i18n="deltaCaveat">A delta is the difference between these two single responses, not proof that language caused it.</p>
+      </div>
+      <div class="answer-grid">
+        <article class="answer-card" id="answer-en" lang="en" dir="ltr">
+          <div class="answer-top"><span class="language-chip">ENGLISH</span><span class="confidence-label" data-i18n="confidence">CONFIDENCE</span></div>
+          <div class="answer-choice"><span class="answer-orbit">J</span><div><small data-i18n="jevChoice">Jev's choice</small><strong class="choice-result"></strong></div><b class="confidence-value"></b></div>
+          <div class="your-stance"><span data-i18n="yourChoiceLabel">Your choice</span><b class="your-choice-value"></b><i class="match-value"></i></div>
+          <div class="probability-row"><span class="probability-label"></span><b class="probability-value"></b></div><div class="probability-track"><span class="probability-fill"></span></div>
+          <div class="permissibility"><span data-i18n="permission">Intervention judged permissible</span><b class="permission-value"></b></div>
+          <div class="usage-line"></div>
+        </article>
+        <article class="answer-card answer-card-fa" id="answer-fa" lang="fa" dir="rtl">
+          <div class="answer-top"><span class="language-chip">فارسی</span><span class="confidence-label" data-i18n="confidence">CONFIDENCE</span></div>
+          <div class="answer-choice"><span class="answer-orbit">J</span><div><small data-i18n="jevChoice">Jev's choice</small><strong class="choice-result"></strong></div><b class="confidence-value"></b></div>
+          <div class="your-stance"><span data-i18n="yourChoiceLabel">Your choice</span><b class="your-choice-value"></b><i class="match-value"></i></div>
+          <div class="probability-row"><span class="probability-label"></span><b class="probability-value"></b></div><div class="probability-track"><span class="probability-fill"></span></div>
+          <div class="permissibility"><span data-i18n="permission">Intervention judged permissible</span><b class="permission-value"></b></div>
+          <div class="usage-line"></div>
+        </article>
+      </div>
+      <div class="interpretation"><span class="interpretation-mark">i</span><p data-i18n="interpretation">A difference can come from translation, model uncertainty, or a single run. It does not establish a general rule about Jev or either language.</p></div>
+    </section>
+
+    <footer class="footer"><span data-i18n="footerLeft">Built for curiosity, not moral authority.</span><span><a href="https://zachlandes.com/jev-meets-trolley-problem/" target="_blank" rel="noreferrer">JEV ARTICLE ↗</a><span class="footer-dot">·</span><a href="https://github.com/pollinations/pollinations/issues/17647" target="_blank" rel="noreferrer">POLLINATIONS QUEST #17647 ↗</a><span class="footer-dot">·</span><span data-i18n="footerRight">Visitors pay with their own Pollen.</span></span></footer>
+  </main>
+  <script src="app-config.js"></script>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
