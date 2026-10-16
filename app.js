@@ -412,13 +412,19 @@ ui.intervene.addEventListener("click", () => setChoice("intervene"));
 ui.refrain.addEventListener("click", () => setChoice("refrain"));
 ui.liveConsent.addEventListener("change", updateRunState);
 ui.connect.addEventListener("click", startLogin);
-ui.demo.addEventListener("click", () => {
+function showDemo() {
   if (!selectedChoice) return setStatus(copy[uiLanguage].needsChoice, "error");
   displayResults(demoPayload("en"), demoPayload("fa"), "demo");
   setStatus(copy[uiLanguage].demoNote, "success");
-});
+}
+
+ui.demo.addEventListener("click", showDemo);
 ui.run.addEventListener("click", compareLive);
 
 populateScenarioSelect();
 setLanguage(uiLanguage);
 updateRunState();
+if (new URLSearchParams(window.location.search).get("demo") === "1") {
+  setChoice("intervene");
+  showDemo();
+}
